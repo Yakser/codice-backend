@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "codice-backend"
+version = "0.1.0"
+description = "Paste tool"
+authors = ["Yakser <iaksanov2044@mail.ru>"]
+readme = "README.md"
+packages = [{include = "codice_backend"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = {extras = ["all"], version = "^0.100.1"}
+pytest = "^7.4.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+flake8 = "^6.1.0"
+pre-commit = "^3.3.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
