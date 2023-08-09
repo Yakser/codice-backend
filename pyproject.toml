@@ -8,8 +8,12 @@ packages = [{include = "codice_backend"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-fastapi = {extras = ["all"], version = "^0.100.1"}
+fastapi = "^0.101.0"
+uvicorn = {extras = ["standard"], version = "^0.23.2"}
+sqlmodel = "^0.0.8"
+python-decouple = "^3.8"
 pytest = "^7.4.0"
+alembic = "^1.11.2"
 
 
 [tool.poetry.group.dev.dependencies]
