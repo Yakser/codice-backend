@@ -4,8 +4,13 @@ from sqlmodel import Field, SQLModel
 
 
 class Paste(SQLModel, table=True):
-    id: str = Field(
-        primary_key=True, unique=True, index=True, nullable=False, regex=r"^[-\w]+\Z"
+    id: Optional[int] = Field(
+        default=None,
+        primary_key=True,
+        index=True,
     )
-    name: Optional[str]
-    text: str
+    slug: str | None = Field(unique=True, index=True, nullable=True, regex=r"^[-\w]+\Z")
+    author: str | None
+    content: str | None
+    title: str | None
+    description: str | None
