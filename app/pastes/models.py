@@ -1,11 +1,12 @@
-from fastapi import APIRouter
+from typing import Optional
 
-router = APIRouter(
-    prefix="/pastes",
-    tags=["pastes"],
-)
+from sqlmodel import Field, SQLModel
 
 
-@router.get("/", description="Returns list of all pastes")
-async def pastes_list() -> list[str]:
-    pass
+class Paste(SQLModel, table=True):
+    id: str = Field(
+        primary_key=True, unique=True, index=True, nullable=False, regex=r"^[-\w]+\Z"
+    )
+    name: Optional[str]
+    text: str
+    test: str | None = Field(nullable=True)
