@@ -9,4 +9,3 @@ class Paste(SQLModel, table=True):
     )
     name: Optional[str]
     text: str
-    test: str | None = Field(nullable=True)

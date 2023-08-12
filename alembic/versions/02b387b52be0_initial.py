@@ -1,8 +1,8 @@
-"""test
+"""initial
 
-Revision ID: c5406e235440
-Revises:
-Create Date: 2023-08-11 23:41:23.177483
+Revision ID: 02b387b52be0
+Revises: 
+Create Date: 2023-08-12 11:54:05.323312
 
 """
 from typing import Sequence, Union
@@ -13,7 +13,7 @@ import sqlmodel
 
 
 # revision identifiers, used by Alembic.
-revision: str = "c5406e235440"
+revision: str = "02b387b52be0"
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -26,7 +26,6 @@ def upgrade() -> None:
         sa.Column("id", sqlmodel.sql.sqltypes.AutoString(), nullable=False),
         sa.Column("name", sqlmodel.sql.sqltypes.AutoString(), nullable=True),
         sa.Column("text", sqlmodel.sql.sqltypes.AutoString(), nullable=False),
-        sa.Column("new_field", sa.Integer(), nullable=False),
         sa.PrimaryKeyConstraint("id"),
     )
     op.create_index(op.f("ix_paste_id"), "paste", ["id"], unique=True)
