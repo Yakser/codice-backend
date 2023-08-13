@@ -14,3 +14,4 @@ class Paste(SQLModel, table=True):
     content: str | None
     title: str | None
     description: str | None
+    # access by link
